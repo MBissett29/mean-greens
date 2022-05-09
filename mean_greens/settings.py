@@ -10,6 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
+
 
 from pathlib import Path
 
@@ -26,7 +31,9 @@ SECRET_KEY = 'django-insecure-47!el_s3ms^$9khwnibl@!kv)ej$-m-)n$$wxsc3e4o!w%+s@y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
+
+SITE_ID = 1
 
 
 # Application definition
@@ -39,10 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'store'
+    
+    'store.apps.StoreConfig',
 ]
 
 MIDDLEWARE = [
