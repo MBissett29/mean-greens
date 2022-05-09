@@ -84,8 +84,14 @@ hr{
 
 }
 
+.arrow {
+    color: black !important;
+    z-index: 1;
+}
 .chg-quantity{
-	width: 12px;
+	height: 12px;
+    width: 12px;
+    color: black;
 	cursor: pointer;
 	display: block;
 	margin-top: 5px;
