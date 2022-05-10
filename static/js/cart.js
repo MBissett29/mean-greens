@@ -10,7 +10,7 @@ for (var i =0; i < updateBtns.length; i++) {
         if (user== 'AnonymousUser'){
             console.log('User is not authenticated')
         } else {
-            updateUserOrder()
+            updateUserOrder(productId, action)
         }
     })
 }
@@ -28,11 +28,9 @@ function updateUserOrder(productId, action){
         },
         body:JSON.stringify({'productId':productId, 'action':action})
     })
-
     .then((response) =>{
         return response.json()
     })
-
     .then((data) =>{
         location.reload()
     })
